@@ -42,7 +42,7 @@ The goal is to explore how different portfolio construction and rebalancing stra
     - Weights sum to 1
     - Long-only (no short selling)
     - <= 20% allocation per asset
-    - >= 5% allocation to SHY for defensiveness
+    - *>=* 5% allocation to SHY for defensiveness
 
 ### 3. Rebalancing Strategies
 Custom `simulate_rebalance` function tested:
@@ -91,6 +91,8 @@ Tracked: portfolio value, turnover, rebalancing costs, CAGR, Sharpe, volatility,
 
 #### Streamlit Dashboard  
 ![Initial Dashboard Screen](figure/init_dashboard.png)
+
+--
 
 ![Dashboard Screenshot](figure/dashboard.png)
 
