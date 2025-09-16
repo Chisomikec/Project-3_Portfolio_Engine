@@ -41,8 +41,8 @@ The goal is to explore how different portfolio construction and rebalancing stra
   - Constraints:
     - Weights sum to 1
     - Long-only (no short selling)
-    - ≤ 20% allocation per asset
-    - ≥ 5% allocation to SHY for defensiveness
+    - <= 20% allocation per asset
+    - >= 5% allocation to SHY for defensiveness
 
 ### 3. Rebalancing Strategies
 Custom `simulate_rebalance` function tested:
@@ -63,7 +63,7 @@ Tracked: portfolio value, turnover, rebalancing costs, CAGR, Sharpe, volatility,
 - Target: Next-day return per ticker.
 - Splits: Train (2020–2022), Validation (2023), Test (2024).
 - Model: XGBRegressor with hyperparameter tuning via GridSearchCV + early stopping.
-- Evaluation: RMSE, MAE, R², Hit ratio (≈0.53), IC (≈0.04).
+- Evaluation: RMSE, MAE, R², Hit ratio (~0.53), IC (~0.04).
 - Findings: Model struggled with magnitude (reverting to mean) but showed modest directional skill.
 
 ---
@@ -90,6 +90,8 @@ Tracked: portfolio value, turnover, rebalancing costs, CAGR, Sharpe, volatility,
 ![True vs Predicted](figure/true_vs_pred-test.png)  
 
 #### Streamlit Dashboard  
+![Initial Dashboard Screen](figure/init_dashboard.png)
+
 ![Dashboard Screenshot](figure/dashboard.png)
 
 ---
@@ -108,9 +110,9 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 #### Features:
-  - Select assets (≥5 required).
-  - Choose date range, rebalancing method, and parameters.
-  - Run optimisation, view portfolio weights, equity curve, and performance metrics.
+  - Select assets (>= 5 required).
+  - Choose rebalancing method, and parameters.
+  - Run optimisation to view portfolio weights, equity curve, and performance metrics.
 
 ### 3. Run the Forecasting Notebook
   - Open `predict.ipynb` (XGBoost forecasting).
